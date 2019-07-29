@@ -1,0 +1,11 @@
+<div class="card animated fadeIn fast">
+  <img class="card-img-top" src="{{equipoAux.img}}" [alt]="equipoAux">
+  <div class="card-body">
+    <h5 class="card-title">{{equipoAux.nombre}}</h5>
+    <p class="card-text">Titulos: {{equipoAux.titulos}}</p>
+    <p class="card-text">
+      <small class="text-muted">Pais: {{equipoAux.pais}}</small>
+    </p>
+    <button (click)="verEquipo(equipoAux.id)" type="button" class="btn btn-outline-primary btn-block">Ver Mas</button>
+  </div>
+</div>

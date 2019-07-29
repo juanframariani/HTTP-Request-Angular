@@ -1,0 +1,20 @@
+<h1>{{equipo.nombre | uppercase}}<small> - {{equipo.creacion | date : 'dd/MM/y'}}</small></h1>
+<hr>
+<div class="row">
+    <div class="col-md-4" style="text-align: center">
+        <img [src]="equipo.img" class="img-fluid" [alt]="equipo.nombre">
+        <br><br>
+        <a [routerLink]="['/equipos']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>  
+    <div class="col-md-8">
+        <h3 style="color: crimson">{{equipo.nombre}}</h3>
+        <hr>
+        <p>{{equipo.titulos}}</p>
+        <p><b>Estadio:</b> {{equipo.estadio}}</p>
+        <p><b>Pais:</b> {{equipo.pais}}</p>
+        <p><b>Historia:</b> {{equipo.resumen | truncate: 50}}</p>
+        <div>
+            <img *ngIf="equipo.ganoMundial == 'SI'" src="assets/img/copa.jpg" alt="Copa">
+        </div>
+    </div> 
+</div>

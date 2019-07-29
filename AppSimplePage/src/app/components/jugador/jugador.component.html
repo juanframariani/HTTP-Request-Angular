@@ -1,0 +1,17 @@
+<h1>{{jugador.nombre | uppercase}}<small> - {{jugador.fechaNacimiento | date : 'dd/MM/yy'}}</small></h1>
+<hr>
+<div class="row">
+  <div class="col-md-4" style="text-align: center">
+    <!-- <img [src]="jugador.img" class="img-fluid" [alt]="jugador.nombre"> -->
+    <br><br>
+    <a [routerLink]="['/jugadores']" class="btn btn-outline-danger btn-block">Regresar</a>
+  </div>
+  <div class="col-md-8">
+    <h3 style="color: crimson">{{jugador.nombre}}</h3>
+    <hr>
+    <p>{{jugador.nombre}}</p>
+    <p><b>Nacionalidad:</b> {{jugador.nacionalidad}}</p>
+    <p><b>Posicion:</b> {{jugador.posicion}}</p>
+    <p><b>Biografia:</b> {{jugador.biografia}}</p>
+  </div>
+</div>

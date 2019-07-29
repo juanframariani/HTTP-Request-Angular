@@ -1,0 +1,10 @@
+<h1>Los equipos europeos con más títulos</h1>
+
+<hr>
+<div class="card-columns">
+  <!-- Usando equipoSeleccionado atrapamos el dato que viene del equipo-tarjeta.component.ts -->
+  <app-equipo-tarjeta (equipoSeleccionado)="verEquipo($event)" *ngFor="let equipoLocal of
+  equipos; let i = index" [equipoAux]="equipoLocal">
+  </app-equipo-tarjeta>
+</div>
+

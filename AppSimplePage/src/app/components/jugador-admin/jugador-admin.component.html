@@ -1,0 +1,41 @@
+<h3>Jugador <small>{{ jugador.nombre }}</small></h3>
+<button class="btn btn-outline-danger" [routerLink]="['/lista']">Regresar</button>
+<button class="btn btn-outline-success" (click)="addNew(forma)">Nuevo Jugador</button>
+<hr>
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+    <form (ngSubmit)="save()" #forma="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" [(ngModel)]="jugador.nombre" name="nombre" class="form-control" required minlength="4"
+          placeholder="Jugador">
+      </div>
+      <div class="form-group">
+        <label for="nacionalidad">Nacionalidad</label>
+        <input id="nacionalidad" [(ngModel)]="jugador.nacionalidad" name="nacionalidad" class="form-control" required minlength="4"
+          placeholder="Nacionalidad">
+      </div>
+      <div class="form-group">
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input id="fechaNacimiento" [(ngModel)]="jugador.fechaNacimiento" name="fechaNacimiento" class="form-control" required minlength="4"
+          placeholder="(yyyy-MM-dd)">
+      </div>
+      <div class="form-group">
+        <label for="posicion">Posicion</label>
+        <input id="posicion" [(ngModel)]="jugador.posicion" name="posicion" class="form-control" required minlength="4"
+          placeholder="Posicion">
+      </div>
+      <div class="form-group">
+        <label for="biografia">Biografia</label>
+        <textarea class="form-control" id="biografia" name="biografia" [(ngModel)]="jugador.biografia" rows="3"
+          required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-primary">Guardar Jugador</button>
+        <span style="text-align: right; width: 500; color: blue; font-weight: bold">&nbsp;&nbsp;&nbsp;
+          {{ resultadoOperacion }}</span>
+      </div>
+    </form>
+  </div>
+</div>

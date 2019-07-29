@@ -1,0 +1,25 @@
+<h1>Leyendas del Futbol</h1>
+<hr>
+
+<div class="dropdown">
+  <select [(ngModel)]="posSelected">
+    <option value="Delantero">Delantero</option>
+    <option value="Mediocampista">Mediocampista</option>
+    <option value="Defensor">Defensor</option>
+  </select>
+</div>
+
+<hr>
+<div class="card-columns">
+  <div class="card animated fadeIn fast" *ngFor="let jugadorAux of jugadores | filterlist:posSelected">
+    <!-- <img class="card-img-top" src="" [alt]=""> -->
+    <div class="card-body">
+      <h5 class="card-title">{{jugadorAux.nombre}}</h5>
+      <p class="card-text">Titulos: {{jugadorAux.posicion}}</p>
+      <p class="card-text">
+        <small class="text-muted">Biografia: {{jugadorAux.biografia}}</small>
+      </p>
+      <button (click)="verJugador(jugadorAux.id)" type="button" class="btn btn-outline-primary btn-block">Ver Mas</button>
+    </div>
+  </div>
+</div>

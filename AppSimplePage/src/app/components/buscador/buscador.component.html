@@ -1,0 +1,18 @@
+<h1>Buscando: {{termino}}  </h1>
+
+<hr>
+
+<div class="row" *ngIf="equipos.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No existen resultados con el temino {{termino}}
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <!-- Usando equipoSeleccionado atrapamos el dato que viene del equipo-tarjeta.component.ts -->
+  <app-equipo-tarjeta (equipoSeleccionado)="verEquipo($event)" *ngFor="let equipoLocal of
+    equipos; let i = index" [equipoAux]="equipoLocal">
+  </app-equipo-tarjeta>
+</div>
